@@ -22,7 +22,7 @@ printf("\n          RULE OF THIS GAME         \n");
 printf("\n      Wining situation:\n");
 
 
-5. printf("\n5.You can exit the game at any time by pressing 'E' or 'e'\n So Try to win in minimum no of move\n");
+5. printf("\n5.You can exit the game at any time by pressing 'e' \n So Try to win in minimum no of move\n");
 
 printf("\n    Happy gaming, Good Luck\n");
 ```
