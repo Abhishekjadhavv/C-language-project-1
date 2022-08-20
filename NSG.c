@@ -16,7 +16,7 @@ int main()
     char name[30];
 
     printf("Player Name\n");
-    scanf("%s",&name);
+    scanf("%s", &name);
 
     printf("\n          RULE OF THIS GAME         \n");
     printf("\n1.You can move only 1 step at a time by arrow key\n");
@@ -40,7 +40,7 @@ int main()
     setMatrix(arr);
     while (move)
     {
-        printf("\nHello %s, Move Remaining: %d",name,move);
+        printf("\nHello %s, Move Remaining: %d", name, move);
         display(arr);
 
         if (Win(arr))
@@ -78,12 +78,11 @@ int main()
         move--;
     }
 
-
     if (Win(arr))
     {
         printf("\nCongratulation you win in %d moves", 400 - move);
         printf("\nPress any key to exit...");
-        move+=1;
+        move += 1;
         getch();
     }
 
@@ -214,28 +213,31 @@ int Win(int arr[][4])
     {
         for (j = 0; j <= 2; j++)
         {
-             if(arr[i][j+1]>arr[i][j]){
+            if (arr[i][j + 1] > arr[i][j] &&  (arr[i][j]>=1 && arr[i][j]<=15))
+            {
                 check = 1;
-             }
-             else if(i==3 && (j+1) == 3){
-                   if(arr[i][j+1]<arr[i][j])
-                     check = 1;
-                    else{
-                      check = 0;
-                      break;
-                    } 
-                       
-             }else{
-                 check = 0;
-                 break;
-             } 
-            
+            }
+            else if (i == 3 && (j + 1) == 3)
+            {
+                if ((arr[i][j + 1] < arr[i][j]))
+                    check = 1;
+                else
+                {
+                    check = 0;
+                    break;
+                }
+            }
+            else
+            {
+                check = 0;
+                break;
+            }
         }
 
-        if(check == 0){
+        if (check == 0)
+        {
             break;
         }
-
     }
 
     return check;
